@@ -1,1 +1,6 @@
 .idea
+local-entrypoint.py
+auto-tag-and-release.py
+*.pyc
+__pycache__
+venv

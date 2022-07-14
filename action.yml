@@ -1,12 +1,15 @@
-name: 'thentges-tag-and-release'
-description: 'for now just playing'
-# TODO branding
+name: 'tag-and-release-action'
+description: 'auto-tag and create a release including latest changelog information. see README.md for format information'
 inputs:
-  api_access_token:
-    description: 'todo'
+  API_ACCESS_TOKEN:
+    description: 'a GitHub API access token having access to the repository scope'
+    required: true
+  REPOSITORY_NAME:
+    description: 'the name of the repository where this action runs. (see example workflow in .github)'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.api_access_token }}
+    - ${{ inputs.API_ACCESS_TOKEN }}
+    - ${{ inputs.REPOSITORY_NAME }}
