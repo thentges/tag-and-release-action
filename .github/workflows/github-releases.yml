@@ -1,0 +1,27 @@
+name: github-releases
+
+on:
+  push:
+    branches: [ "dev"]
+
+
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      api_access_token:
+        required: true
+
+jobs:
+
+  tag-and-release-if-needed:
+#    if: "startsWith(github.event.head_commit.message, 'chg: :bookmark:') && contains(github.event.head_commit.message, 'preparing v')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+
+      - name: tag and release
+        env:
+          api_access_token: ${{ secrets.API_ACCESS_TOKEN }}
+        uses: actions/tag-and-release-action@v1.0

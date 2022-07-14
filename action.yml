@@ -1,0 +1,12 @@
+name: 'thentges-tag-and-release'
+description: 'for now just playing'
+# TODO branding
+inputs:
+  api_access_token:
+    description: 'todo'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.api_access_token }}
