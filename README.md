@@ -41,7 +41,7 @@ on:
 
 jobs:
   tag-and-release:
-    uses: thentges/tag-and-release-action/.github/workflows/auto-tag-and-release.yml@v1
+    uses: thentges/tag-and-release-action/.github/workflows/auto-tag-and-release.yml@v2
 
 ```
 
